@@ -62,6 +62,7 @@ app.get('/survey/:name', function(req, res) {
 	});
  
 });
+
 app.get('/survey/:name', function(req, res) {
   let name1 = req.params.name;
 Model.findOne({survey:name1}, function (err, doc){
@@ -71,12 +72,12 @@ Model.findOne({survey:name1}, function (err, doc){
 });
 });
 app.post('/survey', (req, res)=>{
-    let sur = req.body;/*toh bhai ye hai data jo aara hai form se isme*/
+    let survey = req.body;/*toh bhai ye hai data jo aara hai form se isme*/
     // users.push(user);
     const obj = new Survey();
-    obj.survey=sur.surveyname;
-    obj.text = sur.text;
-    obj.choice=sur.choices;
+    obj.survey=survey.surveyname;
+    obj.text = survey.text;
+    obj.choice=survey.choices;
     obj.save((error, result)=> {
         res.status(201).end();
     })
