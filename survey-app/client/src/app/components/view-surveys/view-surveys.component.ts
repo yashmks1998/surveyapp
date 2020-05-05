@@ -34,14 +34,14 @@ ngOnInit(): void {
 
 takeSurvey(choices:any){
  
-  let count =  []
- this.a++;
-  var surveyObj = {"survey1":choices.survey,"text1":this.a};
-  console.log(surveyObj)
-  this.surveyService.addcountSurvey(surveyObj)
-            .subscribe((res)=> {
-                  console.log(res);
-            })
+//   let count =  []
+//  this.a++;
+//   var surveyObj = {"survey1":choices.survey,"text1":this.a};
+//   console.log(surveyObj)
+//   this.surveyService.addcountSurvey(surveyObj)
+//             .subscribe((res)=> {
+//                   console.log(res);
+//             })
   console.log("choices :",choices);
 
   this.router.navigate(["takeSurvey",{text:choices.survey}]);

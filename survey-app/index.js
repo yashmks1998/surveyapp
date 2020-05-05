@@ -22,7 +22,7 @@ const SurveySchema = new mongoose.Schema({
   survey: { type: String, default: '' },
     text: { type: String, default: 0 },
     choice: {type:Object}
-    count1: { type: Number, default:0 },
+    // count1: { type: Number, default:0 },
   });
 const Survey = mongoose.model('Survey', SurveySchema);
 const CountSchema = new mongoose.Schema({
@@ -71,12 +71,12 @@ Model.findOne({survey:name1}, function (err, doc){
 });
 });
 app.post('/survey', (req, res)=>{
-    let survey = req.body;
+    let sur = req.body;/*toh bhai ye hai data jo aara hai form se isme*/
     // users.push(user);
     const obj = new Survey();
-    obj.survey=survey.surveyname;
-    obj.text = survey.text;
-    obj.choice=survey.choices;
+    obj.survey=sur.surveyname;
+    obj.text = sur.text;
+    obj.choice=sur.choices;
     obj.save((error, result)=> {
         res.status(201).end();
     })
